@@ -31,6 +31,7 @@ $(document).ready(function () {
 			streamers.forEach(function(streamer) {
 				$('.streamers').append(streamer + " ");
 			})
+			// test 2nd row of names manually, e.g. $('.streamers').append('Andrew');
 		})
 	}
 
