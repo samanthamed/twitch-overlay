@@ -25,8 +25,8 @@ $(document).ready(function () {
 			var header = data.header;
 			var footer = data.footer;
 			var streamers = data.streamers;
-			$('header').text(header);
-			$('footer').text(footer);
+			$('.header-text').text(header);
+			$('.footer-text').text(footer);
 			$('.streamers').text('');
 			streamers.forEach(function(streamer) {
 				$('.streamers').append(streamer + " ");
@@ -47,4 +47,5 @@ $(document).ready(function () {
     	('0' + currentdate.getMinutes()).substr(-2) + ":" +
     	('0' + currentdate.getSeconds()).substr(-2);
   		console.log(datetime);
-	}, 60000);
+		}, 60000);
+	})
