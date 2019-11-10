@@ -18,12 +18,15 @@ $(document).ready(function () {
 		$("#stylesheet").attr("href", "styles/" + css + ".css");
 	}
 
-	// populate couch names from external JSON
-	function populateCouch() {
+	// populate header, footer, and couch names from external JSON
+	function populateText() {
 		// URL randomized to avoid caching old data
 		$.getJSON('https://samanthamed.github.io/twitch-overlay/text.json?' + Math.random().toString().slice(-6), function(data) {
+			var header = data.header;
+			var footer = data.footer;
 			var streamers = data.streamers;
-			$('.streamers-header').text("Streamers");
+			$('header').text(header);
+			$('footer').text(footer);
 			$('.streamers').text('');
 			streamers.forEach(function(streamer) {
 				$('.streamers').append(streamer + " ");
@@ -31,11 +34,11 @@ $(document).ready(function () {
 		})
 	}
 
-	populateCouch();
+	populateText();
 
-	// repopulate couch every 60 seconds to grab any changes
+	// repopulate text every 60 seconds to grab any changes
 	window.setInterval(function() {
-		populateCouch();
+		populateText();
 		var currentdate = new Date();
   		var datetime = "Last Sync: " + (currentdate.getMonth() + 1) + "/" +
     	currentdate.getDate() + "/" +

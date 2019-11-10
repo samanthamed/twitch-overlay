@@ -1,0 +1,12 @@
+* {
+  font-family: 'Ropa Sans', sans-serif;
+  color: #ffffff;
+  text-stroke: 2px #000000;
+  background-image: url("../assets/bg-gradient.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body {
+  width: 1280px;
+}
